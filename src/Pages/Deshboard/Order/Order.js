@@ -46,6 +46,7 @@ const Order = () => {
                   <TableCell>Price</TableCell>
                   <TableCell>Company</TableCell>
                   <TableCell>Delete</TableCell>
+                  <TableCell>status</TableCell>
               </TableRow>
             </TableHead>
               {
@@ -59,6 +60,7 @@ const Order = () => {
                   <TableCell>{bike.bike.Price}</TableCell>
                   <TableCell>{bike.bike.company}</TableCell>
                   <TableCell><DeleteIcon onClick={()=>handleDelete(bike._id)} /></TableCell>
+                  <TableCell>{bike.status}</TableCell>
                   </TableBody>)
               }
           </Table>
