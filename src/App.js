@@ -1,23 +1,46 @@
-import logo from './logo.svg';
+import 'bootstrap/dist/css/bootstrap.min.css';
 import './App.css';
-
+import Home from './Pages/Home/HomeContainer/Home';
+import Bikeexplore from './Pages/Bikeexplore/Bikeexplore'
+import Login from './Pages/Authentication/Login/Login'
+import Register from './Pages/Authentication/Register/Register'
+import {
+  BrowserRouter as Router,
+  Switch,
+  Route
+} from "react-router-dom";
+import PrivateRoute from './Pages/Authentication/PrivateRoute/PrivateRoute';
+import AuthProvider from './context/AuthProvider/AuthProvider';
+import Deshboardhome from './Pages/Deshboard/Deshboardhome';
+import PlaceOrder from './Pages/Placeorder/PlaceOrder';
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <AuthProvider>
+      <Router>
+        <Switch>
+        <Route exact path="/">
+        <Home></Home>
+        </Route>
+        <PrivateRoute path="/bikeexplore">
+        <Bikeexplore></Bikeexplore>
+        </PrivateRoute>
+        <Route path="/deshboard">
+        <Deshboardhome></Deshboardhome>
+        </Route>
+        <PrivateRoute path="/placeorder/:id">
+        <PlaceOrder></PlaceOrder>
+        </PrivateRoute>
+        <Route path="/login">
+        <Login></Login>
+        </Route>
+        <Route path="/register">
+        <Register></Register>
+        </Route>
+        </Switch>
+        </Router>
+      </AuthProvider>
+
     </div>
   );
 }
