@@ -63,7 +63,7 @@ const Login = () => {
                     <Button onClick={handleGoogleSignIn} variant="contained">Google Sign In</Button>
                 </Grid>
                 <Grid item xs={12} md={6}>
-                    <img style={{ width: '100%' }} src="../" alt="" />
+                    <img style={{ width: '100%' }} src="https://th.bing.com/th/id/OIP.mkaYoPaQUAHr2cGZBeqfAAHaFc?w=273&h=201&c=7&r=0&o=5&pid=1.7" alt="" />
                 </Grid>
             </Grid>
         </Container>
