@@ -29,7 +29,7 @@ const drawerWidth = 200;
 
 function Deshboardhome(props) {
   const { window } = props;
-  const {admin,user}=useAuth()
+  const {admin,user,logout}=useAuth()
   const [mobileOpen, setMobileOpen] = React.useState(false);
   let { path, url } = useRouteMatch();
 
@@ -62,7 +62,7 @@ function Deshboardhome(props) {
             </Link>
           </Box>
         )}
-        {!admin && (
+           {!admin && (
           <Box>
             <Link className="d-block" to={`${url}/order`}>
               <Button color="inherit">Order</Button>
@@ -75,6 +75,7 @@ function Deshboardhome(props) {
             </Link>
           </Box>
         )}
+        <Button color="inherit" onClick={logout}>LogOut</Button>
       </List>
     </div>
   );

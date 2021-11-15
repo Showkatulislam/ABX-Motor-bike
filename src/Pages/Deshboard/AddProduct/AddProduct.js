@@ -15,7 +15,7 @@ const AddProduct = () => {
     }
     const handleLoginSubmit = e => {
         console.log(bike)
-        fetch("http://localhost:5000/addbikes",{
+        fetch("https://radiant-wave-51353.herokuapp.com/addbikes",{
             method:"POST",
             headers:{
                 'content-type':'application/json'

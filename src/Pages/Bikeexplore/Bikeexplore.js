@@ -10,7 +10,7 @@ import { Box } from '@mui/system';
 const Bikeexplore = () => {
     const [bikes,setBikes]=useState([])
     useEffect(()=>{
-        fetch('http://localhost:5000/bikes')
+        fetch('https://radiant-wave-51353.herokuapp.com/bikes')
         .then(res=>res.json())
         .then(data=>setBikes(data))
     },[])

@@ -12,7 +12,7 @@ const ManageAllOrder = () => {
    const [orders,setOrders]=useState([])
    const [suc,setSuc]=useState(false)
    useEffect(()=>{
-      fetch('http://localhost:5000/orders')
+      fetch('https://radiant-wave-51353.herokuapp.com/orders')
       .then(res=>res.json())
       .then(data=>{
         setOrders(data)
@@ -20,7 +20,7 @@ const ManageAllOrder = () => {
       })
    },[suc])
    const handleDeleteOrder=id=>{
-    const url=`http://localhost:5000/order/${id}`;
+    const url=`https://radiant-wave-51353.herokuapp.com/order/${id}`;
     const process=window.confirm("Want to delete!!!!!!!")
     if(process){
       fetch(url,{

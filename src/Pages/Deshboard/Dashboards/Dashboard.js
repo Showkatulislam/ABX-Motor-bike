@@ -11,14 +11,14 @@ import DeleteIcon from '@mui/icons-material/Delete'
 const Dashboard = () => {
   const [bikes,setBikes]=useState([])
   useEffect(()=>{
-      fetch('http://localhost:5000/bikes')
+      fetch('https://radiant-wave-51353.herokuapp.com/bikes')
       .then(res=>res.json())
       .then(data=>setBikes(data))
   },[])
   const handleDelete=(id)=>{
     const process=window.confirm("Are You Want to Delete!!!!!!")
     if(process){
-      const url=`http://localhost:5000/bike/${id}`
+      const url=`https://radiant-wave-51353.herokuapp.com/bike/${id}`
       fetch(url,{
         method:'delete',
         headers:{

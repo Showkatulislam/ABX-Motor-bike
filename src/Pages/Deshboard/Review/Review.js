@@ -13,7 +13,7 @@ const Review = () => {
         setReview(newReviews);
     }
     const handleLoginSubmit = e => {
-        const url=`http://localhost:5000/reviews`;
+        const url=`https://radiant-wave-51353.herokuapp.com/reviews`;
         fetch(url,{
             method:"POST",
             headers:{

@@ -13,7 +13,7 @@ const PlaceOrder = () => {
     const {user}=useAuth()
     const {id}=useParams()
     useEffect(()=>{
-        fetch(`http://localhost:5000/bike/${id}`)
+        fetch(`https://radiant-wave-51353.herokuapp.com/bike/${id}`)
         .then(res=>res.json())
         .then(data=>setBike(data))
     },[])
@@ -29,7 +29,7 @@ const PlaceOrder = () => {
     const status='pendding'
     const handleLoginSubmit = e => {
         const order={bike,userName,email,status,address}
-        fetch('http://localhost:5000/orders',{
+        fetch('https://radiant-wave-51353.herokuapp.com/orders',{
             method:"Post",
             headers:{
                 'content-type':'application/json'

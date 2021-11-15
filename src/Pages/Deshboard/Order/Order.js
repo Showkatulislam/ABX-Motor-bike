@@ -12,14 +12,14 @@ const Order = () => {
     const [orders,setOrders]=useState([])
     const {user}=useAuth()
     useEffect(()=>{
-        fetch(`http://localhost:5000/orders/${user.email}`)
+        fetch(`https://radiant-wave-51353.herokuapp.com/orders/${user.email}`)
         .then(res=>res.json())
         .then(data=>setOrders(data))
     },[])
     const handleDelete=(id)=>{
       const proceed=window.confirm("Are You Want to Delete")
       if(proceed){
-          const url=`http://localhost:5000/order/${id}`;
+          const url=`https://radiant-wave-51353.herokuapp.com/order/${id}`;
           fetch(url,{
               method:"delete",
               headers:{
