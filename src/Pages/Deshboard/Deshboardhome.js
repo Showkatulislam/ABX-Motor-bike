@@ -11,7 +11,7 @@ import MenuIcon from "@mui/icons-material/Menu";
 import Toolbar from "@mui/material/Toolbar";
 import Typography from "@mui/material/Typography";
 import { Button } from "@mui/material";
-import { Switch, Route, Link, useRouteMatch } from "react-router-dom";
+import { Switch, Route, Link, useRouteMatch ,useHistory} from "react-router-dom";
 import Dashboard from "./Dashboards/Dashboard";
 import MakeAdmin from "./MakeAdmin/MakeAdmin";
 import AddProduct from "./AddProduct/AddProduct";
@@ -32,10 +32,14 @@ function Deshboardhome(props) {
   const {admin,user,logout}=useAuth()
   const [mobileOpen, setMobileOpen] = React.useState(false);
   let { path, url } = useRouteMatch();
-
+  const history=useHistory()
   const handleDrawerToggle = () => {
     setMobileOpen(!mobileOpen);
   };
+  const handlelogout=()=>{
+    logout()
+      history.push('/')
+  }
 
   const drawer = (
     <div>
@@ -75,7 +79,7 @@ function Deshboardhome(props) {
             </Link>
           </Box>
         )}
-        <Button color="inherit" onClick={logout}>LogOut</Button>
+        <Button color="inherit" onClick={handlelogout}>LogOut</Button>
       </List>
     </div>
   );

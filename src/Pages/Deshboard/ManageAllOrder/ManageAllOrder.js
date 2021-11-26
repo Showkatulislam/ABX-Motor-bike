@@ -39,7 +39,7 @@ const ManageAllOrder = () => {
     }
    }
    const handleOnUpdate=id=>{
-    const url=`http://localhost:5000/order/${id}`;
+    const url=`https://radiant-wave-51353.herokuapp.com/order/${id}`;
     fetch(url,{
       method:'put',
       headers:{
