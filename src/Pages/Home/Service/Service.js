@@ -14,10 +14,10 @@ const Service = (props) => {
     return (
         <Grid item xs={4} sm={4} md={4}>
           <Link to={`/placeorder/${_id}`}>
-          <Card sx={{ maxWidth: 345 }}>
+          <Card style={{ maxWidth: 345 }}>
       <CardMedia
         component="img"
-        height="200"
+        height="230px"
         image={img}
         alt="green iguana"
       />

@@ -10,7 +10,7 @@ const Review = (props) => {
   const { img ,Name,comment,rating} = props.review;
   return (
     <Grid item xs={4} sm={6} md={3}>
-      <Card sx={{ maxWidth: 345 }}>
+      <Card style={{ maxWidth: 345 }}>
         <CardActionArea>
           <CardMedia
             component="img"

@@ -4,7 +4,7 @@ import Footer from '../../Shares/footer/Footer';
 import Banner from '../Banner/Banner';
 import Reviews from '../Review/Reviews';
 import Services from '../Services/Services';
-import Offer from '../offer/Offer';
+import Catagories from '../Catagories/Catagories';
 
 
 const Home = () => {
@@ -12,7 +12,7 @@ const Home = () => {
         <div>
            <Header className="mt-0"></Header>
            <Banner></Banner>
-           <Offer></Offer>
+           <Catagories></Catagories>
            <Services></Services>
            <Reviews></Reviews>
            <Footer></Footer>

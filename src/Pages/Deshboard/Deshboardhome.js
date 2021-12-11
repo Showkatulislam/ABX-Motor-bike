@@ -11,7 +11,13 @@ import MenuIcon from "@mui/icons-material/Menu";
 import Toolbar from "@mui/material/Toolbar";
 import Typography from "@mui/material/Typography";
 import { Button } from "@mui/material";
-import { Switch, Route, Link, useRouteMatch ,useHistory} from "react-router-dom";
+import {
+  Switch,
+  Route,
+  Link,
+  useRouteMatch,
+  useHistory,
+} from "react-router-dom";
 import Dashboard from "./Dashboards/Dashboard";
 import MakeAdmin from "./MakeAdmin/MakeAdmin";
 import AddProduct from "./AddProduct/AddProduct";
@@ -22,64 +28,63 @@ import ManageAllOrder from "./ManageAllOrder/ManageAllOrder";
 import useAuth from "../../hooks/useAuth";
 import AdminRoute from "../Authentication/AdminRoute/AdminRoute";
 
-
-
-
 const drawerWidth = 200;
-
+const bg={background:'#673ab7',color:'white',width:'200px',margin:'10px'}
 function Deshboardhome(props) {
   const { window } = props;
-  const {admin,user,logout}=useAuth()
+  const { admin, user, logout } = useAuth();
   const [mobileOpen, setMobileOpen] = React.useState(false);
   let { path, url } = useRouteMatch();
-  const history=useHistory()
+  const history = useHistory();
   const handleDrawerToggle = () => {
     setMobileOpen(!mobileOpen);
   };
-  const handlelogout=()=>{
-    logout()
-      history.push('/')
-  }
+  const handlelogout = () => {
+    logout();
+    history.push("/");
+  };
 
   const drawer = (
-    <div>
+    <div >
       <Toolbar />
-      <Link to="/bikeexplore">
-        <Button color="inherit">BikeExplore</Button>
+      <Link to="/ProductExplore">
+        <Button style={bg} color="inherit">Product Explore</Button>
       </Link>
       <Divider />
       <List>
         {admin && (
           <Box>
-          <Link to={`${url}/deshboard`}>
-          <Button color="inherit" >Added Bikes</Button>
-        </Link>
+            <Link to={`${url}/deshboard`}>
+              <Button style={bg} color="inherit">Added Product</Button>
+            </Link>
             <Link to={`${url}/makeAdmin`}>
-              <Button color="inherit">Make Admin</Button>
+              <Button style={bg} color="inherit">Make Admin</Button>
             </Link>
 
             <Link to={`${url}/addproduct`}>
-              <Button color="inherit">Add product</Button>
+              <Button style={bg} color="inherit">Add product</Button>
             </Link>
             <Link to={`${url}/manageallorder`}>
-              <Button color="inherit">Manage all order</Button>
+              <Button style={bg} color="inherit">Manage all order</Button>
             </Link>
           </Box>
         )}
-           {!admin && (
+        {!admin && (
           <Box>
             <Link className="d-block" to={`${url}/order`}>
-              <Button color="inherit">Order</Button>
+              <Button style={bg} color="inherit">Order</Button>
             </Link>
             <Link className="d-block" to={`${url}/pay`}>
-              <Button color="inherit">pay</Button>
+              <Button style={bg} color="inherit">pay</Button>
             </Link>
             <Link className="d-block" to={`${url}/review`}>
-              <Button color="inherit">review</Button>
+              <Button style={bg} color="inherit">review</Button>
             </Link>
           </Box>
         )}
-        <Button color="inherit" onClick={handlelogout}>LogOut</Button>
+        <Button style={bg} color="inherit" onClick={handlelogout}>
+          LogOut
+        </Button>
       </List>
     </div>
   );
@@ -92,7 +97,7 @@ function Deshboardhome(props) {
       <CssBaseline />
       <AppBar
         position="fixed"
-        sx={{
+        style={{
           width: { sm: `calc(100% - ${drawerWidth}px)` },
           ml: { sm: `${drawerWidth}px` },
         }}
@@ -160,14 +165,10 @@ function Deshboardhome(props) {
         <Toolbar />
         <Switch>
           <Route exact path={path}>
-           <div>{ 
-           admin && <h1>Hello Admin {user.email}</h1>
-           }
-           {
-             !admin &&<h1>Hello user {user.email}</h1>
-           }
-           
-           </div>
+            <div>
+              {admin && <h1>Hello Admin {user.email}</h1>}
+              {!admin && <h1>Hello user {user.email}</h1>}
+            </div>
           </Route>
           <AdminRoute exact path={`${path}/deshboard`}>
             <Dashboard></Dashboard>

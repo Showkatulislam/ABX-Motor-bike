@@ -9,7 +9,7 @@ const Header = () => {
   return (
     <>
       <Navbar
-        bg="primary"
+        bg="dark"
         className="px-2"
         variant="dark"
         sticky="top"
@@ -17,18 +17,18 @@ const Header = () => {
         expand="lg"
       >
         <Container>
-          <Navbar.Brand href="#home">ABX MOTOR BIKE</Navbar.Brand>
+          <Navbar.Brand href="#home">ABX SUPER MARKET</Navbar.Brand>
           <Navbar.Toggle />
           <Navbar.Collapse className="justify-content-end">
             <NavLink className="text-white m-3" to="/">
               Home
             </NavLink>
-            <NavLink className="text-white m-3 fs-bold" to="/bikeexplore">
-              Expolor Bike
+            <NavLink className="text-white m-3 fs-bold" to="/ProductExplore">
+              Expolor Product
             </NavLink>
             {user?.email ? (
               <Box>
-                 <NavLink className="text-white m-3 fs-bold" to="/deshboard">
+                <NavLink className="text-white m-3 fs-bold" to="/deshboard">
                   Deshboard
                 </NavLink>
                 <Button
@@ -43,7 +43,6 @@ const Header = () => {
               <NavLink className="text-white m-3" to="/login">
                 Login
               </NavLink>
-              
             )}
             <Navbar.Text>User {user?.displayName}</Navbar.Text>
           </Navbar.Collapse>
